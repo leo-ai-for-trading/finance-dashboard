@@ -6,8 +6,8 @@ import praw
 
 reddit = praw.Reddit(
     user_agent="myApp",
-    client_id = "DVH0cAZkUVU1k5pIZRxr_Q",
-    client_secret = "9WJETN76viVWjoDjlPP75g66jfk6MQ"
+    client_id = "",
+    client_secret = ""
 )
 
 st.sidebar.title("Navigation Bar")
