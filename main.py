@@ -23,3 +23,17 @@ if options == "wallstreetbets":
     #data = pd.DataFrame(subm, columns=['id','url','title','comments','score','author','time','content'])
     #json format works
     st.write(subm)
+    
+if options == "Chart":
+    name = st.text_input("Insert ticker")
+    #x = name.upper()
+    if name:
+        ticker = yf.download(name.upper(),period='ytd')
+        #close_tick = ticker.Close
+        #st.write(ticker.columns)
+        fig = px.line(ticker.Close,x=ticker.index,y="Close", title=name.upper()+" Price")
+        fig.update_xaxes(rangeslider_visible=True)
+
+        st.write(fig)
+
+
